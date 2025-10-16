@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Enable built in SWC styled componentes transform faster than Babel
+  compiler: {
+    styledComponents: true
+  }
 };
 
 export default nextConfig;
