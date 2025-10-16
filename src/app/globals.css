@@ -87,10 +87,10 @@
   --drop-shadow: 0 1px 4px rgba(100, 100, 100, 1);
 
   /* border-radius */
-  --border-radius-xs: var(var(--spacing-04));
+  --border-radius-xs: var(--spacing-04);
   --border-radius-sm: var(--spacing-08);
   --border-radius-md: var(--spacing-16);
-  --border-radius-lg: var(var(--spacing-24));
+  --border-radius-lg: var(--spacing-24);
   --border-radius-pill: 60px;
   --border-radius-circle: 50%;
 

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./registry";
+import StyledComponentsRegistry from "./registry";
 
 export const metadata: Metadata = {
   title: "Lacrei Saúde",
@@ -14,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
-        {children}
+       <StyledComponentsRegistry>{children}</StyledComponentsRegistry> 
       </body>
     </html>
   );
