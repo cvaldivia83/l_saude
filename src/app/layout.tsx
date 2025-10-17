@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import "./registry";
 import StyledComponentsRegistry from "./registry";
+import { Nunito } from 'next/font/google';
+
+const nunito = Nunito({subsets: ['latin'], display: 'swap' });
 
 export const metadata: Metadata = {
   title: "Lacrei Saúde",
@@ -14,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={nunito.className}>
       <body>
        <StyledComponentsRegistry>{children}</StyledComponentsRegistry> 
       </body>
