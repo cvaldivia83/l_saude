@@ -9,7 +9,7 @@
     "eslint.config.mjs": true,
     "tsconfig.*": true,
     "next-env.d.ts": true,
-    "next.config.ts": false,
+    "next.config.ts": true,
     "jest.setup.js": true,
     "jest.config.mjs": true,
     "README.md": false
