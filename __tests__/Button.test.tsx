@@ -1,4 +1,4 @@
-import Button, { StyledButton } from '../src/components/Button';
+import Button from '../src/components/Button';
 import {render, screen } from '@testing-library/react';
 
 describe('<Button />', () => {
@@ -6,6 +6,13 @@ describe('<Button />', () => {
     render(<Button type='button'>Clique</Button>);
 
     expect(screen.getByRole('button', { name: /clique/i })).toBeInTheDocument();
+  })
+
+  it('deve usar HTMl semantico <button>', () => {
+    const { container } = render(<Button type='button' />);
+    const btn = container.querySelector('button');
+    expect(btn).toBeInTheDocument();
+    
   })
 
   it('deve aplicar estilo primário por padrão', () => {
