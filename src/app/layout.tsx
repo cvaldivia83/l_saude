@@ -1,6 +1,9 @@
+
 import type { Metadata } from "next";
 import StyledComponentsRegistry from "./registry";
+import ThemeProviderWrapper from "@/components/ThemeProviderWrapper";
 import { Nunito } from 'next/font/google';
+import '../styles/layout.css'
 
 const nunito = Nunito({subsets: ['latin'], display: 'swap' });
 
@@ -17,7 +20,11 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={nunito.className}>
       <body>
-       <StyledComponentsRegistry>{children}</StyledComponentsRegistry> 
+       <StyledComponentsRegistry>
+          <ThemeProviderWrapper>
+            {children}
+          </ThemeProviderWrapper>
+        </StyledComponentsRegistry> 
       </body>
     </html>
   );
