@@ -6,61 +6,60 @@ import React, { ButtonHTMLAttributes } from 'react';
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'default',
   disabled?: boolean,
-  type: "button" | "reset" | "submit" | undefined,
+  type?: "button" | "reset" | "submit" | undefined,
   onClick?: () => void;
 }
 
 const modifier = {
   primary: css`
-    background-color: #018762;
-    color: #FFFFFF;
+    background-color: ${({ theme }) => theme.colors.semantic.button.primary.default.background };
+    color: ${({ theme }) => theme.colors.semantic.button.primary.default.textColor };
     &:hover {
-      background-color: #007756;
+      background-color: ${({ theme }) => theme.colors.semantic.button.primary.hover.background };
     };
     &:active {
-      background-color: #014C37;
+      background-color: ${({ theme }) => theme.colors.semantic.button.primary.pressed.background };
     };
     &:focus {
-      background-color: #018762;
-      color: #FFFFFF;
-      border-width: 2px;
+      background-color: ${({ theme }) => theme.colors.semantic.button.primary.focus.background };
+      color: ${({ theme }) => theme.colors.semantic.button.primary.focus.textColor };
+      border-width: ${({ theme }) => theme.spacing.xs4 };
       border-color: #FFFFFF;
     };
   `, 
     secondary: css`
-    background-color: #FFFFFF;
-    color: #018762;
-    border-width: 2px;
-    border-color: #018762;
+    background-color: ${({ theme }) => theme.colors.semantic.button.secondary.default.background };
+    color: ${({ theme }) => theme.colors.semantic.button.secondary.default.textColor };
+    border-width: ${({ theme }) => theme.spacing.xs4 };
+    border-color: ${({ theme }) => theme.colors.semantic.button.secondary.default.borderColor };
     &:hover {
-      background-color: #DFF2ED;
-      color: #007756;
-      border-color: #007756;
+      background-color: ${({ theme }) => theme.colors.semantic.button.secondary.hover.background };
+      color: ${({ theme }) => theme.colors.semantic.button.secondary.hover.textColor };
+      border-color: ${({ theme }) => theme.colors.semantic.button.secondary.hover.borderColor };
     };
     &:focus {
-      border-width: 2px;
-      border-color: #FFFFFF;
+      border-width: ${({ theme }) => theme.spacing.xs4 };
+      border-color: ${({ theme }) => theme.colors.semantic.button.secondary.focus.borderColor };
       outline-offset: 2px;
     };
     &:active {
-      background-color: #80CAB1;
-      color: #014C37;
-      border-color: #014C37;
+      background-color: ${({ theme }) => theme.colors.semantic.button.secondary.pressed.background };
+      color: ${({ theme }) => theme.colors.semantic.button.secondary.pressed.textColor };
+      border-color: ${({ theme }) => theme.colors.semantic.button.secondary.pressed.borderColor };
     }
   `
 }
 
 const StyledButton = styled.button<ButtonProps>`
   height: 48px;
-  border-radius: 8px;
-  outline: none;
+  border-radius: ${({ theme }) => theme.borderRadius.sm };
   text-align: center;
-  box-shadow: 0 5px 10px rgba(100, 100, 100, 0.3);
+  box-shadow: ${({ theme }) => theme.shadow.shadowMd };
+  cursor: pointer;
   transition-property: background-color;
   transition-duration: 150ms;
-  font-size: 1.125rem;
-  font-weight: 500;
-  line-height: 150%;
+  font-size: ${({ theme }) => theme.typography.text.textBase.fontSize };
+  line-height: ${({ theme }) => theme.typography.text.textBase.lineHeight };
   padding: 0 32px;
   &:hover {
     box-shadow: none;
@@ -70,22 +69,22 @@ const StyledButton = styled.button<ButtonProps>`
   };
   &:disabled {
     box-shadow: none;
-    background-color: #CFCFCF;
-    color: #737373;
+    background-color: ${({ theme }) => theme.colors.semantic.button.primary.disabled.background };
+    color: ${({ theme }) => theme.colors.semantic.button.primary.disabled.textColor };
   };
   &:focus {
-    outline: 2px solid #4D8ACB;
-    border-color: #007756;
-    border-width: 2px;
+    outline: 2px solid ${({ theme }) => theme.colors.semantic.button.primary.focus.outline };
+    border-color: ${({ theme }) => theme.colors.semantic.button.primary.focus.border };
+    border-width: ${({ theme }) => theme.spacing.xs4 };
   }
 
   ${({ variant }) => variant === 'primary' && modifier.primary}
   ${({ variant }) => variant === 'secondary' && modifier.secondary}
 `
 
-const Button: React.FC<ButtonProps> = ({variant = 'primary', disabled, children, type}) => {
+const Button: React.FC<ButtonProps> = ({variant = 'primary', disabled, children, type = 'button', onClick }) => {
   return (
-    <StyledButton variant={variant} disabled={disabled} type={type}>{children}</StyledButton>
+    <StyledButton variant={variant} disabled={disabled} type={type} onClick={onClick}>{children}</StyledButton>
   )
 }
 
