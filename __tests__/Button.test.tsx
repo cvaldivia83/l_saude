@@ -1,31 +1,52 @@
 import Button from '../src/components/Button';
 import {render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 describe('<Button />', () => {
   it('deve renderizar o texto do botão corretamente', () => {
-    render(<Button type='button'>Clique</Button>);
+    render(<Button>Clique</Button>);
 
     expect(screen.getByRole('button', { name: /clique/i })).toBeInTheDocument();
   })
 
-  it('deve usar HTMl semantico <button>', () => {
-    const { container } = render(<Button type='button' />);
+  it('usa HTMl semantico <button>', () => {
+    const { container } = render(<Button />);
     const btn = container.querySelector('button');
     expect(btn).toBeInTheDocument();
     
   })
 
-  it('deve aplicar estilo primário por padrão', () => {
-    render(<Button type='button'>Primary</Button>);
+  it('aplica estilo primário por padrão', () => {
+    render(<Button>Primary</Button>);
     const buttonElement = screen.getByRole('button', { name: /primary/i });
     expect(buttonElement).toHaveStyleRule('background-color', '#018762');
     expect(buttonElement).toHaveStyleRule('color', '#FFFFFF');
   })
 
-  it('deve aceitar o atributo disabled', () => {
-    render(<Button disabled type='button'>Aceitar</Button>);
+  it('aceita o atributo disabled', () => {
+    render(<Button disabled>Aceitar</Button>);
     const btn = screen.getByRole('button', { name: /aceitar/i });
 
     expect(btn).toHaveAttribute('disabled');
+  })
+
+  it("tem type = button por padrao", () => {
+    const { container } = render(<Button>Clique</Button>);
+    expect(container.querySelector('button')).toHaveAttribute('type', 'button');
+  })
+
+  it('foca no botão com a tecla tab', async () => {
+    render(<Button>Clique</Button>);
+    const button = screen.getByRole('button');
+
+    await userEvent.tab();
+    expect(button).toHaveFocus();
+  })
+
+  it('tem cursor pointer', () => {
+    const { container } = render(<Button>Clique</Button>);
+    const btn = container.querySelector('button');
+
+    expect(btn).toHaveStyle('cursor: pointer');
   })
 })

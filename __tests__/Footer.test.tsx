@@ -14,10 +14,16 @@ describe('<Footer />', () => {
     expect(footer).toBeInTheDocument();
   })
 
-  it('nav deve ter aria-label Footer', () => {
+  it('nav tem aria-label para links internos', () => {
     render(<Footer />);
-    const nav = screen.getByRole('navigation', { name: /footer/i});
+    const nav = screen.getByRole('navigation', { name: /navegacao links/i});
     expect(nav).toBeInTheDocument();
+  })
+
+  it('nav tem aria-label para links de midia social', () => {
+    render(<Footer />);
+    const socialNav = screen.getByRole('navigation', { name: /social media links/i});
+    expect(socialNav).toBeInTheDocument();
   })
 
   it('nav links devem estar organizados em lista', () => {
@@ -28,9 +34,15 @@ describe('<Footer />', () => {
 
   it('links para midias sociais devem ter aria-label descritivos', () => {
     render(<Footer />);
-    const twitter = screen.getByRole('link', { name: /siga a gente no twitter/i});
+
+    const linkedin = screen.getByRole('link', { name: /siga a gente no linkedin/i});
+    const facebook = screen.getByRole('link', { name: /siga a gente no facebook/i});
     const instagram = screen.getByRole('link', { name: /siga a gente no instagram/i});
-    expect(twitter).toBeInTheDocument();
+    const email = screen.getByRole('link', { name: /mande um email pra gente/i});
+
+    expect(linkedin).toBeInTheDocument();
     expect(instagram).toBeInTheDocument();
+    expect(email).toBeInTheDocument();
+    expect(facebook).toBeInTheDocument();
   })
 })
