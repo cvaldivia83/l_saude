@@ -165,22 +165,22 @@ export const theme = {
   },
   typography: {
     header: {
-      headlineXl: {
+      Xl: {
         fontSize: '48px',
         fontWeight: 'bold',
         lineHeight: '120%'
       },
-      headlineLg: {
+      Lg: {
         fontSize: '40px',
         fontWeight: 'bold',
         lineHeight: '120%'
       },
-      headlineBase: {
+      Base: {
         fontSize: '32px',
         fontWeight: 'bold',
         lineHeight: '120%'
       },
-      headlineSm: {
+      Sm: {
         fontSize: '24px',
         fontWeight: 'regular',
         lineHeight: '150%'
