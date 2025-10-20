@@ -1,6 +1,7 @@
 import Button from '../src/components/Button';
-import {render, screen } from '@testing-library/react';
+import {render, screen } from '../src/test/render';
 import userEvent from '@testing-library/user-event';
+
 
 describe('<Button />', () => {
   it('deve renderizar o texto do botão corretamente', () => {
@@ -9,7 +10,7 @@ describe('<Button />', () => {
     expect(screen.getByRole('button', { name: /clique/i })).toBeInTheDocument();
   })
 
-  it('usa HTMl semantico <button>', () => {
+  it('usa tag HTML semantica <button>', () => {
     const { container } = render(<Button />);
     const btn = container.querySelector('button');
     expect(btn).toBeInTheDocument();
@@ -19,8 +20,8 @@ describe('<Button />', () => {
   it('aplica estilo primário por padrão', () => {
     render(<Button>Primary</Button>);
     const buttonElement = screen.getByRole('button', { name: /primary/i });
-    expect(buttonElement).toHaveStyleRule('background-color', '#018762');
-    expect(buttonElement).toHaveStyleRule('color', '#FFFFFF');
+    expect(buttonElement).toHaveStyleRule('background-color', 'emerald60');
+    expect(buttonElement).toHaveStyleRule('color', 'gray10');
   })
 
   it('aceita o atributo disabled', () => {

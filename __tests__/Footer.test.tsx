@@ -1,5 +1,5 @@
 import Footer from '../src/components/Footer';
-import {render, screen } from '@testing-library/react';
+import {render, screen } from '../src/test/render';
 
 describe('<Footer />', () => {
   it('renderiza componente corretamente', () => {
@@ -32,7 +32,7 @@ describe('<Footer />', () => {
     expect(list).toBeInTheDocument();
   })
 
-  it('links para midias sociais devem ter aria-label descritivos', () => {
+  it('links para midias sociais devem ter aria-label descritivas', () => {
     render(<Footer />);
 
     const linkedin = screen.getByRole('link', { name: /siga a gente no linkedin/i});

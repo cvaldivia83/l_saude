@@ -1,5 +1,5 @@
 import Header from '../src/components/Header'
-import {render, screen } from '@testing-library/react';
+import {render, screen } from '../src/test/render';
 import userEvent from '@testing-library/user-event';
 
 describe('<Header />', () => {
