@@ -3,8 +3,8 @@
 import styled from "styled-components"
 
 const StyledAvatar = styled.div`
-  width: 32px;
-  height: 32px;
+  width: ${({ theme }) => theme.spacing.m };
+  height: ${({ theme }) => theme.spacing.m };
   padding: ${({ theme }) => theme.spacing.m };
   background: ${({ theme }) => theme.colors.primitives.emerald30 };
   border-radius: ${({ theme }) => theme.borderRadius.circle };

@@ -54,7 +54,7 @@ const StyledButton = styled.button<ButtonProps>`
   height: 48px;
   border-radius: ${({ theme }) => theme.borderRadius.sm };
   text-align: center;
-  box-shadow: ${({ theme }) => theme.shadow.shadowMd };
+  box-shadow: ${({ theme }) => theme.shadow.shadowMd};
   cursor: pointer;
   transition-property: background-color;
   transition-duration: 150ms;

@@ -9,7 +9,6 @@ import Divider from './Divider'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faSquareInstagram, faSquareLinkedin, IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faChevronUp } from '@fortawesome/free-solid-svg-icons'
-import Button from './Button';
 
 const FooterGrid = styled.div`
   display: grid;
