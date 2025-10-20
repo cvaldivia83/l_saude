@@ -45,7 +45,7 @@ const Header = () => {
     <StyledHeader>
       <div className="header-container">
         <Link href="/" aria-label="Inicio">
-          <Image src={Logo} alt="logo Lacrei Saúde" className="header-image" />
+          <Image src={Logo} alt="logo Lacrei Saúde" className="header-image" priority fetchPriority="high" />
         </Link>
 
         <div className="header-links">

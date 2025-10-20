@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import StyledComponentsRegistry from "./registry";
 import { Nunito } from 'next/font/google';
-import '../styles/layout.css'
+import { GlobalStyle } from '../styles/GlobalStyle';
 import { GlobalLayoutWrapper, MainContent } from "../components/GlobalLayoutWrapper";
 import Header from "../components/Header"
 import Footer from "../components/Footer";
@@ -23,6 +23,7 @@ export default function RootLayout({
     <html lang="pt-BR" className={nunito.className}>
       <body>
         <StyledComponentsRegistry>
+          <GlobalStyle />
           <GlobalLayoutWrapper>
             <Header />
               

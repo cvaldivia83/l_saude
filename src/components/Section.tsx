@@ -32,7 +32,7 @@ const Section = () => {
     <StyledSection>
         
       <div className="description">
-        <Title variant="Lg" as="h2">Atendimento qualificado, seguro e inclusivo</Title>
+        <Title $variant="Lg" as="h2">Atendimento qualificado, seguro e inclusivo</Title>
 
         <Paragraph variant='textBase'>Acreditamos que, ao possibilitar a inclusão clínica da nossa comunidade, transformamos o mundo.</Paragraph>
 

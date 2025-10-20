@@ -30,7 +30,7 @@ const Hero = () => {
   const router = useRouter();
   return (
     <StyledBanner>
-      <Title as='h1' variant='Xl'>Junte-se à nossa comunidade</Title>
+      <Title as='h1' $variant='Xl'>Junte-se à nossa comunidade</Title>
       <Paragraph variant='textXl'>Encontre atendimento clínico de qualidade</Paragraph>
       <Button variant='primary' type="button" onClick={() => router.push('/atendimento')}>Atendimento</Button>
     </StyledBanner>
