@@ -23,7 +23,7 @@ const ScrollToTopButton = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // if (!isVisible) return null;
+  if (!isVisible) return null;
 
   return (
     <Button variant='primary' onClick={handleClick}><FontAwesomeIcon icon={faChevronUp} /></Button>
