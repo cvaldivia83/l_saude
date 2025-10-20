@@ -12,5 +12,4 @@ export const GlobalLayoutWrapper = styled.div`
 
 export const MainContent = styled.main`
   flex-grow: 1;
-  padding: 20px;
 `

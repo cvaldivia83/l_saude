@@ -12,6 +12,7 @@ const StyledParagraph = styled.p<Omit<ParagraphProps, 'children'>>`
       font-weight: ${style.fontWeight};
       line-height: ${style.lineHeight};
       color: ${theme.colors.semantic.text.body};
+      margin-bottom: ${theme.spacing.s};
     `
   }}
 `

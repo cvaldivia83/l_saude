@@ -1,10 +1,13 @@
-// import dynamic from 'next/dynamic';
-// const Button = dynamic(() => import('../components/Button'));
+import Section from '@/components/Section';
+import dynamic from 'next/dynamic';
+const Hero = dynamic(() => import('../components/Hero'));
+
 
 export default function Home() {
   return (
     <main>
-      <h1>Lacrei Saude Home</h1>
+      <Hero />
+      <Section />
     </main>   
   );
 }

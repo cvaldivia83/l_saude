@@ -1,3 +1,7 @@
+export type HeaderStyleVariant = 'Xl' | 'Lg' | 'Base' | 'Sm';
+export type TextStyleVariant = 'textXl' | 'textBase' | 'textSm' | 'textXs';
+export type TitleTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+
 export const theme = {
   colors: {
     primitives: {
@@ -210,4 +214,6 @@ export const theme = {
     }
 
   }
-} as const
+} as const;
+
+export type Theme = typeof theme;

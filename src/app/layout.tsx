@@ -1,7 +1,6 @@
 
 import type { Metadata } from "next";
 import StyledComponentsRegistry from "./registry";
-import ThemeProviderWrapper from "@/components/ThemeProviderWrapper";
 import { Nunito } from 'next/font/google';
 import '../styles/layout.css'
 import { GlobalLayoutWrapper, MainContent } from "../components/GlobalLayoutWrapper";
@@ -23,19 +22,17 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={nunito.className}>
       <body>
-        <ThemeProviderWrapper>
+        <StyledComponentsRegistry>
           <GlobalLayoutWrapper>
             <Header />
-            <StyledComponentsRegistry>
               
                 <MainContent>
                   {children}
                 </MainContent>    
               
-            </StyledComponentsRegistry>
             <Footer /> 
           </GlobalLayoutWrapper>
-        </ThemeProviderWrapper>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
